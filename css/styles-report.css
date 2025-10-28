@@ -1,0 +1,23 @@
+/* Report / gallery-series page specific rules (numeric image class names are matched with attribute selectors) */
+[class="1-1-9"], [class="2-26-10"], [class="3-1-11"], [class="4-1-12"], [class="5-1-13"], [class="6-1-14"], [class="7-1-15"], [class="8-1-16"], [class="9-1-17"] {
+  display: block;
+  margin: 32px auto;
+  width: 100%;
+  max-width: 900px; /* keep report images at a reasonable readable size */
+  height: auto;
+}
+
+/* If you want them even smaller, reduce max-width above (e.g., 700px). On narrow screens they remain full-width. */
+
+.feature-gallery-1-14 {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  [class="1-1-9"], [class="2-26-10"], [class="3-1-11"], [class="4-1-12"], [class="5-1-13"], [class="6-1-14"], [class="7-1-15"], [class="8-1-16"], [class="9-1-17"] {
+    max-width: 100%;
+    margin: 18px 12px;
+  }
+}

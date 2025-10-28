@@ -1,0 +1,38 @@
+:root{
+  --font-family-inter: 'Inter', sans-serif;
+  --text-black: rgba(0,0,0,0.65);
+}
+
+/* Contact page: make visuals consistent with the rest of the site */
+.contact-hero{
+  padding: 56px 24px;
+  background: transparent; /* keep hero clean and consistent */
+  text-align: center;
+}
+.contact-hero-inner{ max-width: 900px; margin: 0 auto; }
+.contact-title{ font-family: var(--font-family-inter); font-size: 48px; font-weight:700; margin: 0 0 12px 0; color: var(--text-black); }
+.contact-sub{ font-family: var(--font-family-inter); color: rgba(0,0,0,0.55); margin: 0 0 28px 0; }
+
+.contact-body{ padding: 40px 24px 120px 24px; }
+.contact-grid{ max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 360px; gap: 40px; align-items: start; }
+
+.contact-form{ display:flex; flex-direction: column; gap: 12px; }
+.contact-form label{ font-weight:600; font-size:0.95rem; color: rgba(0,0,0,0.7); }
+.contact-form input, .contact-form textarea{ padding: 12px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); font-family: var(--font-family-inter); font-size: 15px; }
+.contact-form textarea{ resize: vertical; min-height: 140px; }
+.btn-send{ background: transparent; color: rgba(0,0,0,0.85); border: 1px solid rgba(0,0,0,0.08); padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight:700; margin-top:8px; }
+.btn-send:hover{ background: rgba(0,0,0,0.03); }
+
+.contact-info{ display:flex; flex-direction: column; gap: 18px; }
+.info-card{ background: white; border-radius: 12px; padding: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+.info-card h3{ margin:0 0 6px 0; }
+.info-card p{ margin:0; }
+
+@media (max-width: 960px){
+  .contact-grid{ grid-template-columns: 1fr; }
+  .contact-hero { padding: 36px 16px; }
+  .contact-title { font-size: 36px; }
+}
+
+/* reveal fallback styling: elements with data-reveal already have transitions in styles.css */
+[data-reveal] { will-change: opacity, transform; }

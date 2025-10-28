@@ -1,0 +1,220 @@
+/* Shared project pages (gallery / project detail) styles - extracted from the exports */
+:root {
+  --font-family-inter: 'Inter', sans-serif;
+  --text-black: rgba(0, 0, 0, 0.55);
+}
+
+.nav-4, .header-1-2, .nav-6, .header-2-4 {
+  /* shared header/nav layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 24px 64px;
+}
+
+.feature-1-9 {
+  /* Project header: image headline above text, centered */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  padding: 48px 48px;
+}
+
+.feature-gallery-1-14,
+.feature-cards-17,
+.feature-cards-28,
+.feature-cards-39,
+.feature-cards-17 {
+  display: flex;
+  gap: 56px; /* slightly larger gap so cards breathe */
+  padding: 80px 64px; /* bring the gallery up so images appear larger on screen */
+}
+
+/* small button used on project pages for in-page CTAs like 'View build' */
+.btn-view-build {
+  /* make the CTA look like an underlined text link rather than a bordered button */
+  display: inline-block;
+  padding: 0; /* no extra box padding so it reads like text */
+  margin: 0;
+  background: transparent;
+  border: none;
+  color: inherit; /* match surrounding text color */
+  font-family: var(--font-family-inter); /* ensure same font as site */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  font-size: 16px; /* slightly larger text */
+}
+.btn-view-build:hover { color: rgba(0,0,0,0.95); }
+
+.gallery-15, .gallery-13, .gallery-15 {
+  display: flex;
+  gap: 32px;
+  width: 100%; /* allow gallery to use full container width so columns can grow */
+  align-items: flex-start;
+}
+
+.feature-1-9 img.image-10,
+.image-17, .image-18, .image-20, .image-21, .image-22, .image-24, .image-25, .image-26,
+.image-19, .image-30, .image-35, .image-41, .image-46 {
+  border-radius: 16px;
+  display: block;
+  width: 100%;
+  /* allow images to scale larger on wide viewports */
+  max-width: none;
+  height: auto;
+  object-fit: cover;
+}
+
+/* small helper for project columns */
+.column-1-16, .column-2-19, .column-3-23 {
+  display:flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* make the three gallery columns take roughly a third of the available width */
+.feature-gallery-1-14 > .gallery-15 > .column-1-16,
+.feature-gallery-1-14 > .gallery-15 > .column-2-19,
+.feature-gallery-1-14 > .gallery-15 > .column-3-23 {
+  flex: 1 1 33%;
+  min-width: 220px; /* avoid collapsing too small on narrow viewports */
+}
+
+.feature-1-9 .text-11 {
+  /* project headline + body wrapper (scoped to the project header) */
+  /* match the lead image max-width so the description lines up with the image */
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Title + description sizing for project header (scoped) */
+.feature-1-9 .text-11 .text-12 {
+  font-family: var(--font-family-inter);
+  font-size: 3rem; /* slightly larger title */
+  line-height: 1.08;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.feature-1-9 .text-11 .text-13 {
+  font-family: var(--font-family-inter);
+  font-size: 1.125rem; /* slightly larger description for readability */
+  line-height: 1.45;
+  color: var(--text-black);
+  margin: 0;
+}
+
+/* Ensure the lead image + text fit comfortably on most desktop viewports - allow larger hero */
+.feature-1-9 img.image-10 {
+  max-height: 62vh; /* allow the hero image to occupy more vertical space */
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Make card items take more horizontal space so smaller pictures appear larger */
+.feature-cards-17 a[class^="card"],
+.feature-cards-28 a[class^="card"],
+.feature-cards-39 a[class^="card"],
+.feature-gallery-1-14 a[class^="card"] {
+  flex: 1 1 48%;
+}
+
+@media (max-width: 900px) {
+  /* revert to more compact sizes on narrow screens */
+  .feature-1-9 .text-11 .text-12 { font-size: 1.6rem; }
+  .feature-1-9 .text-11 .text-13 { font-size: 0.95rem; }
+  .feature-1-9 img.image-10 { max-height: 40vh; width: 100%; }
+  .feature-1-9 .text-11 { max-width: 100%; padding: 0 8px; }
+  .feature-1-9 { padding: 28px 20px; }
+  .feature-cards-17, .feature-cards-28, .feature-cards-39 { padding: 40px 20px; gap: 28px; }
+}
+
+/* keep base desktop container consistent */
+.desktop-1 {
+  max-width: 1600px; /* larger container so images can scale up */
+  margin: 0 auto;
+}
+
+/* Build grid: show build/process images in a responsive 3x4 grid */
+
+
+.build-grid {
+  display: grid;
+  /* larger minimum so thumbnails appear bigger on desktop */
+  grid-template-columns: repeat(3, minmax(360px, 1fr));
+  gap: 32px;
+  /* center the grid within the page container and limit max width so it doesn't span the full viewport */
+  width: 100%;
+  max-width: 1600px;
+  margin: 28px auto 64px auto;
+  padding: 0 40px;
+}
+
+.build-item img {
+  width: 100%;
+  height: auto; /* preserve original aspect ratio; scale down if needed */
+  object-fit: contain; /* do not crop; show whole image inside the grid cell */
+  border-radius: 12px;
+  display: block;
+  background: #fff; /* avoid visual gaps on transparent images */
+}
+
+/* Reveal animation support for build items; the existing IntersectionObserver will toggle .in-view */
+.build-item[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 420ms ease, transform 420ms ease;
+}
+.build-item.in-view { opacity: 1; transform: none; }
+
+@media (max-width: 1100px) {
+  .build-grid { grid-template-columns: repeat(2, minmax(180px, 1fr)); gap: 18px; }
+}
+@media (max-width: 700px) {
+  .build-grid { grid-template-columns: 1fr; gap: 14px; padding: 0 16px; }
+}
+
+/* Make the bottom-right ski image on the project gallery have rounded corners */
+.feature-gallery-1-14 .column-3-23 img.image-25 {
+  border-radius: 20px;
+}
+
+/* Stack the build section vertically and center its contents so the grid is centered under the heading */
+#build.feature-gallery-1-14 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 80px 64px;
+}
+
+#build.feature-gallery-1-14 .gallery-15 {
+  width: 100%;
+  max-width: 1100px; /* keep the heading column nicely constrained */
+}
+
+/* Center and slightly enlarge the "Build process" heading inside #build */
+#build .text-19 {
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-family-inter);
+  font-size: 1.125rem; /* slightly larger */
+  font-weight: 500;
+  color: var(--text-black);
+  margin: 0 0 8px 0;
+}
+
+/* Video used in the jelly robot gallery (middle column, middle row) */
+video.image-21 {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+}
