@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exported Figma Design</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles-projects.css">
+</head>
+<body>
+<div class="desktop-1">
+<div class="header-1-2">
+  <img src="images/node-3.png" class="node-3" alt="logo" />
+  <div class="nav-4">
+    <a class="text-5" href="index.html"><span class="text-black">Home</span></a>
+    <a class="text-6" href="index.html#gallery"><span class="text-black">Gallery</span></a>
+    <a class="text-7" href="about.html"><span class="text-black">About</span></a>
+    <a class="text-8" href="contact.html"><span class="text-black">Contact</span></a>
+  </div>
+</div>
+<div class="feature-1-9">
+<img src="images/ski.png" class="image-10" alt="image" />
+<div class="text-11">
+<p class="text-12"><span class="text-black">East Coast Free-Ride Skis</span></p>
+<p class="text-13"><span class="text-black">The east coast skiing environment presents unique challenges for those who venture off-piste. Skis that can perform well in deep powder and variable conditions such as; icy crusts, slush, packed powder, obstacles, and other mixed terrain are required. I sought to design and develop a set of off-piste skis specifically tailored towards east coast skiing, focusing on durability, playfulness, lightweight construction, and stability. With this I created a ski brand, called Solstice Skis, that has three skis in it, early season, peak season, and spring. I full prototyped the spring ski, the Spring Break.</span></p>
+  <!-- quick CTA to jump down to the build section where you can add process photos -->
+  <p style="margin-top:18px;">
+    <a class="btn-view-build" href="#build">View build</a>
+  </p>
+</div>
+</div>
+<div class="feature-gallery-1-14">
+  <div class="gallery-15">
+    <div class="column-1-16">
+      <img src="images/ski3.png" class="image-17" alt="image" />
+      <img src="images/ski4.png" class="image-18" alt="image" />
+    </div>
+    <div class="column-2-19">
+      <img src="images/ski5.png" class="image-20" alt="image" />
+      <img src="images/ski2.png" class="image-21" alt="image" />
+      <img src="images/ski6.png" class="image-22" alt="image" />
+    </div>
+    <div class="column-3-23">
+      <img src="images/ski7.png" class="image-24" alt="image" />
+      <img src="images/ski8.png" class="image-25" alt="image" />
+    </div>
+  </div>
+</div>
+
+<!-- Build/process section placeholder - placed AFTER the current gallery so it appears below the pictures -->
+<div id="build" class="feature-gallery-1-14">
+  <div class="gallery-15">
+    <div class="column-1-16">
+      <p class="text-19"><span class="text-black">Build process</span></p>
+    </div>
+  </div>
+
+  <!-- 3x4 responsive grid of build images; add or replace image files as you collect them -->
+  <div class="build-grid">
+      <div class="build-item" data-reveal><img loading="lazy" src="images/build11.png" class="image-17" alt="build step 1" /></div>
+      <div class="build-item" data-reveal><img loading="lazy" src="images/build14.png" class="image-17" alt="build step 2" /></div>
+      <div class="build-item" data-reveal><img loading="lazy" src="images/build15.png" class="image-17" alt="build step 3" /></div>
+      <div class="build-item" data-reveal><img loading="lazy" src="images/build16.png" class="image-17" alt="build step 4" /></div>
+      <div class="build-item" data-reveal><img loading="lazy" src="images/build17.png" class="image-17" alt="build step 5" /></div>
+      <div class="build-item" data-reveal><img loading="lazy" src="images/build1.png" class="image-17" alt="build step 6" /></div>
+      <div class="build-item" data-reveal><img loading="lazy" src="images/build2.png" class="image-17" alt="build step 7" /></div>
+      <div class="build-item" data-reveal><img loading="lazy" src="images/build3.jpg" class="image-17" alt="build step 8" /></div>
+      <div class="build-item" data-reveal><img loading="lazy" src="images/build4.jpg" class="image-17" alt="build step 9" /></div>
+      <div class="build-item" data-reveal><img loading="lazy" src="images/build5.jpg" class="image-17" alt="build step 10" /></div>
+      <div class="build-item" data-reveal><img loading="lazy" src="images/build7.jpg" class="image-17" alt="build step 11" /></div>
+      <div class="build-item" data-reveal><img loading="lazy" src="images/build8.jpg" class="image-17" alt="build step 12" /></div>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  <!-- include scroll reveal script so items with data-reveal get the .in-view class -->
+  <script src="js/scroll-anim.js"></script>
+
+  <!-- noscript fallback: show build items if JS is disabled or blocked -->
+  <noscript>
+    <style>
+      .build-item[data-reveal] { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</body>
+</html>

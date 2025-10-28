@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exported Figma Design</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles-contact.css">
+</head>
+<body>
+<div class="desktop-1">
+<div class="header-1-2">
+  <img src="images/node-3.png" class="node-3" alt="logo" />
+  <div class="nav-4">
+    <a class="text-5" href="index.html"><span class="text-black">Home</span></a>
+    <a class="text-6" href="index.html#gallery"><span class="text-black">Gallery</span></a>
+    <a class="text-7" href="about.html"><span class="text-black">About</span></a>
+    <a class="text-8" href="contact.html"><span class="text-black">Contact</span></a>
+  </div>
+</div>
+<main class="contact-main" role="main">
+  <section class="contact-hero" data-reveal>
+    <div class="contact-hero-inner">
+      <h1 class="contact-title" data-reveal>Get in touch</h1>
+      <p class="contact-sub" data-reveal>Interested in collaboration or a project? I'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="contact-body">
+    <div class="contact-grid">
+  <form id="contact-form" class="contact-form" action="#" method="post" data-reveal>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Tell me about your project"></textarea>
+
+        <button class="btn-send" type="submit">Send Message</button>
+      </form>
+
+      <aside class="contact-info" data-reveal>
+        <div class="info-card">
+          <h3>Email</h3>
+          <p><a href="mailto:sydmonte01@gmail.com">sydmonte01@gmail.com</a></p>
+        </div>
+        <div class="info-card">
+          <h3>LinkedIn</h3>
+          <p><a href="#">linkedin.com/in/sydmo</a></p>
+        </div>
+        <div class="info-card">
+          <h3>Availability</h3>
+          <p>Open to freelance & collaboration</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<script src="js/scroll-anim.js"></script>
+<!-- Simple mailto fallback: opens the user's email client with form contents pre-filled -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = (form.elements['name'] && form.elements['name'].value) || '';
+    var email = (form.elements['email'] && form.elements['email'].value) || '';
+    var message = (form.elements['message'] && form.elements['message'].value) || '';
+
+    var subject = encodeURIComponent('Portfolio message from ' + (name || email || 'Website visitor'));
+    var body = 'Name: ' + name + '\n' +
+               'Email: ' + email + '\n\n' +
+               message;
+
+    var recipient = 'sydmonte01@gmail.com';
+    var mailto = 'mailto:' + encodeURIComponent(recipient) + '?subject=' + subject + '&body=' + encodeURIComponent(body);
+
+    // Open the default mail client
+    window.location.href = mailto;
+  });
+});
+</script>
+</body>
+</html>
