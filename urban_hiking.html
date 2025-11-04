@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Syd Monte — Portfolio</title>
+  <title>Syd Monte — Urban Hiking</title>
   <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
@@ -26,6 +26,9 @@
 <div class="text-11">
 <p class="text-12"><span class="text-black">Urban Hiking for Sustainable Future- Arc’tyrex brand study</span></p>
 <p class="text-13"><span class="text-black">Tasked with picking a brand, I chose Arc’tyrex, to look into their sustainability initiatives and create a line of products for an existing initiative or new one. With brand researching I chose to create a line of products based off of their microplastic studies which concludes that microplastics from rubber soles leach toxic substances into the ground and limit plant growth. I designed a set of urban hiking poles and shoes that encourage outdoor activities in urban environments and are made with natural rubbers to not affect the environment.</span></p>
+  <p style="margin-top:18px;">
+    <a class="btn-view-build" href="#build">View build</a>
+  </p>
 </div>
 </div>
 <div class="feature-gallery-1-14">
@@ -46,7 +49,42 @@
 </div>
 </div>
 </div>
+<!-- Build/process section placeholder - placed AFTER the gallery so it appears below the pictures -->
+<div id="build" class="feature-gallery-1-14">
+    <div class="gallery-15">
+      <div class="column-1-16">
+        <p class="text-19"><span class="text-black">Build process</span></p>
+      </div>
+    </div>
+
+    <div class="build-grid two-col">
+      <!-- Row 1: two videos side-by-side -->
+      <div class="build-item" data-reveal style="grid-column:1"><video src="images/pole_wire.mp4" class="image-17" loading="lazy" controls playsinline muted loop></video></div>
+      <div class="build-item" data-reveal style="grid-column:2"><video src="images/pole_sand.mp4" class="image-17" loading="lazy" controls playsinline muted loop></video></div>
+
+      <!-- Row 2: wide image spanning both columns -->
+      <div class="build-item span-2" data-reveal><img src="images/pole6.png" class="image-17" alt="build step 3" loading="lazy" /></div>
+
+      <!-- Row 3: wide video spanning both columns -->
+      <div class="build-item span-2" data-reveal><video src="images/pole_model.mp4" class="image-17" loading="lazy" controls playsinline muted loop></video></div>
+
+      <!-- Row 4: two items side-by-side -->
+      <div class="build-item" data-reveal><video src="images/pole_print.mp4" class="image-17" loading="lazy" controls playsinline muted loop></video></div>
+  <div class="build-item" data-reveal><img src="images/pole5.jpg" class="image-17 img-bigger" alt="build step 6" loading="lazy" /></div>
+    </div>
+
+</div>
 </div>
 
 </body>
 </html>
+
+  <!-- include scroll reveal script so items with data-reveal get the .in-view class -->
+  <script src="js/scroll-anim.js"></script>
+
+  <!-- noscript fallback: show build items if JS is disabled or blocked -->
+  <noscript>
+    <style>
+      .build-item[data-reveal] { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>

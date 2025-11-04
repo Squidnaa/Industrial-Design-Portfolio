@@ -156,13 +156,57 @@
   padding: 0 40px;
 }
 
-.build-item img {
+/* Two-column variant: center the columns and their items so side-by-side media appear centered */
+.build-grid.two-col {
+  grid-template-columns: repeat(2, minmax(360px, 1fr));
+  justify-content: center; /* center the grid within its container if it doesn't fill the full width */
+  justify-items: center; /* center each grid cell's content horizontally */
+}
+
+.build-grid.two-col .build-item { justify-self: center; }
+
+.build-item img,
+.build-item video {
   width: 100%;
-  height: auto; /* preserve original aspect ratio; scale down if needed */
-  object-fit: contain; /* do not crop; show whole image inside the grid cell */
+  /* enforce a consistent visual height on desktop so mixed portrait/landscape look even
+     use object-fit: cover to allow slight cropping for a tidy grid */
+  height: 320px;
+  object-fit: cover;
   border-radius: 12px;
   display: block;
   background: #fff; /* avoid visual gaps on transparent images */
+}
+
+/* allow some build items to span both columns in a two-col layout */
+.build-item.span-2 { grid-column: 1 / -1; }
+
+/* Span-2 (wide) items should be slightly taller for better visual hierarchy */
+.build-item.span-2 img,
+.build-item.span-2 video {
+  height: 460px;
+}
+
+/* Make the right-column pole5 thumbnail slightly larger for visual balance */
+.build-item img.img-bigger,
+.build-item video.img-bigger {
+  height: 380px;
+}
+
+/* Responsive: reduce fixed heights on medium screens */
+@media (max-width: 1100px) {
+  .build-item img,
+  .build-item video { height: 260px; }
+  .build-item.span-2 img,
+  .build-item.span-2 video { height: 360px; }
+  .build-item img.img-bigger,
+  .build-item video.img-bigger { height: 300px; }
+}
+@media (max-width: 700px) {
+  /* On small screens let media size naturally to avoid excessive cropping */
+  .build-item img,
+  .build-item video,
+  .build-item.span-2 img,
+  .build-item.span-2 video { height: auto; }
 }
 
 /* Reveal animation support for build items; the existing IntersectionObserver will toggle .in-view */
@@ -178,6 +222,32 @@
 }
 @media (max-width: 700px) {
   .build-grid { grid-template-columns: 1fr; gap: 14px; padding: 0 16px; }
+}
+
+/* Code grid: style for code snippets in the jelly robot page */
+.code-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 12px auto 48px auto;
+  padding: 0 16px;
+}
+.code-item pre {
+  background: #0f1720;
+  color: #e6eef6;
+  padding: 16px;
+  border-radius: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Helvetica Neue', monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 900px) {
+  .code-grid { grid-template-columns: 1fr; }
 }
 
 /* Make the bottom-right ski image on the project gallery have rounded corners */
@@ -212,6 +282,15 @@
 
 /* Video used in the jelly robot gallery (middle column, middle row) */
 video.image-21 {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Generic rule to style videos used as gallery items (match image sizing and rounding) */
+video[class^="image-"] {
   width: 100%;
   height: auto;
   display: block;
