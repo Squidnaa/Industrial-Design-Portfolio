@@ -26,6 +26,10 @@
 <div class="text-11">
 <p class="text-12"><span class="text-black">Cafe Culture- an ethnographic study</span></p>
 <p class="text-13"><span class="text-black">An ethnographic study where I observed the interactions between costumers and baristas in a cafe setting. The goal was to understand the small talk that occurred during the ordering and waiting process. I aimed to create a space that not only accommodates but actively encourages costumers and baristas to engage in more extensive and meaningful small talk. The research conducted at multiple local cafes served as an aid to redesigning the serving counter to foster a sense of community within a cafe. </span></p>
+</p>
+  <p style="margin-top:18px;">
+    <a class="btn-view-build" href="#report">View report</a>
+  </p>
 </div>
 </div>
 <div class="feature-gallery-1-14">
@@ -54,21 +58,31 @@
     </div>
   </div>
 
-  <!-- Report images from report.html inserted here -->
-  <div class="build-grid">
-    <div class="build-item"><img src="images/report1.png" alt="report 1" /></div>
-    <div class="build-item"><img src="images/report2.png" alt="report 2" /></div>
-    <div class="build-item"><img src="images/report3.png" alt="report 3" /></div>
-    <div class="build-item"><img src="images/report4.png" alt="report 4" /></div>
-    <div class="build-item"><img src="images/report5.png" alt="report 5" /></div>
-    <div class="build-item"><img src="images/report6.png" alt="report 6" /></div>
-    <div class="build-item"><img src="images/report7.png" alt="report 7" /></div>
-    <div class="build-item"><img src="images/report8.png" alt="report 8" /></div>
-    <div class="build-item"><img src="images/report9.png" alt="report 9" /></div>
+  <!-- Report images inserted here -->
+  <div class="report-scroll" aria-label="Full report images">
+    <div class="report-item" data-reveal><img src="images/report1.png" alt="report 1" loading="lazy" /></div>
+    <div class="report-item" data-reveal><img src="images/report2.png" alt="report 2" loading="lazy" /></div>
+    <div class="report-item" data-reveal><img src="images/report3.png" alt="report 3" loading="lazy" /></div>
+    <div class="report-item" data-reveal><img src="images/report4.png" alt="report 4" loading="lazy" /></div>
+    <div class="report-item" data-reveal><img src="images/report5.png" alt="report 5" loading="lazy" /></div>
+    <div class="report-item" data-reveal><img src="images/report6.png" alt="report 6" loading="lazy" /></div>
+    <div class="report-item" data-reveal><img src="images/report7.png" alt="report 7" loading="lazy" /></div>
+    <div class="report-item" data-reveal><img src="images/report8.png" alt="report 8" loading="lazy" /></div>
+    <div class="report-item" data-reveal><img src="images/report9.png" alt="report 9" loading="lazy" /></div>
   </div>
 
 </div>
 </div>
+
+  <!-- include scroll reveal script so report items with data-reveal get the .in-view class -->
+  <script src="js/scroll-anim.js"></script>
+
+  <!-- noscript fallback: show report items if JS is disabled or blocked -->
+  <noscript>
+    <style>
+      .report-item[data-reveal] { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
 
 </body>
 </html>
